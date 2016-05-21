@@ -64,8 +64,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -87,6 +85,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _defaultProps = __webpack_require__(13);
 
 	var _defaultProps2 = _interopRequireDefault(_defaultProps);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var Slider = _react2['default'].createClass({
 	  displayName: 'Slider',
@@ -172,25 +172,22 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
+	exports.__esModule = true;
+	exports.InnerSlider = undefined;
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _mixinsEventHandlers = __webpack_require__(4);
+	var _eventHandlers = __webpack_require__(4);
 
-	var _mixinsEventHandlers2 = _interopRequireDefault(_mixinsEventHandlers);
+	var _eventHandlers2 = _interopRequireDefault(_eventHandlers);
 
-	var _mixinsHelpers = __webpack_require__(7);
+	var _helpers = __webpack_require__(7);
 
-	var _mixinsHelpers2 = _interopRequireDefault(_mixinsHelpers);
+	var _helpers2 = _interopRequireDefault(_helpers);
 
 	var _initialState = __webpack_require__(12);
 
@@ -210,10 +207,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _arrows = __webpack_require__(17);
 
-	var InnerSlider = _react2['default'].createClass({
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var InnerSlider = exports.InnerSlider = _react2['default'].createClass({
 	  displayName: 'InnerSlider',
 
-	  mixins: [_mixinsHelpers2['default'], _mixinsEventHandlers2['default']],
+	  mixins: [_helpers2['default'], _eventHandlers2['default']],
 	  getInitialState: function getInitialState() {
 	    return _initialState2['default'];
 	  },
@@ -358,18 +357,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    );
 	  }
 	});
-	exports.InnerSlider = InnerSlider;
 
 /***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	exports.__esModule = true;
 
 	var _trackHelper = __webpack_require__(5);
 
@@ -380,6 +375,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _objectAssign = __webpack_require__(11);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var EventHandlers = {
 	  // Event handler for previous and next
@@ -547,22 +544,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	exports['default'] = EventHandlers;
-	module.exports = exports['default'];
 
 /***/ },
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	exports.__esModule = true;
+	exports.getTrackLeft = exports.getTrackAnimateCSS = exports.getTrackCSS = undefined;
 
 	var _reactDom = __webpack_require__(6);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var checkSpecKeys = function checkSpecKeys(spec, keysArray) {
 	  return keysArray.reduce(function (value, key) {
@@ -570,7 +566,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, true) ? null : console.error('Keys Missing', spec);
 	};
 
-	var getTrackCSS = function getTrackCSS(spec) {
+	var getTrackCSS = exports.getTrackCSS = function getTrackCSS(spec) {
 	  checkSpecKeys(spec, ['left', 'variableWidth', 'slideCount', 'slidesToShow', 'slideWidth']);
 
 	  var trackWidth;
@@ -601,8 +597,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return style;
 	};
 
-	exports.getTrackCSS = getTrackCSS;
-	var getTrackAnimateCSS = function getTrackAnimateCSS(spec) {
+	var getTrackAnimateCSS = exports.getTrackAnimateCSS = function getTrackAnimateCSS(spec) {
 	  checkSpecKeys(spec, ['left', 'variableWidth', 'slideCount', 'slidesToShow', 'slideWidth', 'speed', 'cssEase']);
 
 	  var style = getTrackCSS(spec);
@@ -612,8 +607,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return style;
 	};
 
-	exports.getTrackAnimateCSS = getTrackAnimateCSS;
-	var getTrackLeft = function getTrackLeft(spec) {
+	var getTrackLeft = exports.getTrackLeft = function getTrackLeft(spec) {
 
 	  checkSpecKeys(spec, ['slideIndex', 'trackRef', 'infinite', 'centerMode', 'slideCount', 'slidesToShow', 'slidesToScroll', 'slideWidth', 'listWidth', 'variableWidth']);
 
@@ -673,7 +667,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  return targetLeft;
 	};
-	exports.getTrackLeft = getTrackLeft;
 
 /***/ },
 /* 6 */
@@ -687,11 +680,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	exports.__esModule = true;
 
 	var _react = __webpack_require__(2);
 
@@ -701,15 +690,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactLibReactTransitionEvents = __webpack_require__(8);
+	var _ReactTransitionEvents = __webpack_require__(8);
 
-	var _reactLibReactTransitionEvents2 = _interopRequireDefault(_reactLibReactTransitionEvents);
+	var _ReactTransitionEvents2 = _interopRequireDefault(_ReactTransitionEvents);
 
 	var _trackHelper = __webpack_require__(5);
 
 	var _objectAssign = __webpack_require__(11);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var helpers = {
 	  initialize: function initialize(props) {
@@ -784,7 +775,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // console.log('slideHandler', index);
 	    var targetSlide, currentSlide;
 	    var targetLeft, currentLeft;
-	    var callback;
+	    var _callback2;
 
 	    if (this.props.waitForAnimate && this.state.animating) {
 	      return;
@@ -808,21 +799,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	      }
 
-	      callback = function () {
+	      _callback2 = function callback() {
 	        _this.setState({
 	          animating: false
 	        });
 	        if (_this.props.afterChange) {
 	          _this.props.afterChange(currentSlide);
 	        }
-	        _reactLibReactTransitionEvents2['default'].removeEndEventListener(_reactDom2['default'].findDOMNode(_this.refs.track).children[currentSlide], callback);
+	        _ReactTransitionEvents2['default'].removeEndEventListener(_reactDom2['default'].findDOMNode(_this.refs.track).children[currentSlide], _callback2);
 	      };
 
 	      this.setState({
 	        animating: true,
 	        currentSlide: targetSlide
 	      }, function () {
-	        _reactLibReactTransitionEvents2['default'].addEndEventListener(_reactDom2['default'].findDOMNode(this.refs.track).children[currentSlide], callback);
+	        _ReactTransitionEvents2['default'].addEndEventListener(_reactDom2['default'].findDOMNode(this.refs.track).children[currentSlide], _callback2);
 	      });
 
 	      if (this.props.beforeChange) {
@@ -912,12 +903,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        swipeLeft: null
 	      };
 
-	      callback = function () {
+	      _callback2 = function _callback() {
 	        _this.setState(nextStateChanges);
 	        if (_this.props.afterChange) {
 	          _this.props.afterChange(currentSlide);
 	        }
-	        _reactLibReactTransitionEvents2['default'].removeEndEventListener(_reactDom2['default'].findDOMNode(_this.refs.track), callback);
+	        _ReactTransitionEvents2['default'].removeEndEventListener(_reactDom2['default'].findDOMNode(_this.refs.track), _callback2);
 	      };
 
 	      this.setState({
@@ -925,7 +916,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        currentSlide: currentSlide,
 	        trackStyle: (0, _trackHelper.getTrackAnimateCSS)((0, _objectAssign2['default'])({ left: targetLeft }, this.props, this.state))
 	      }, function () {
-	        _reactLibReactTransitionEvents2['default'].addEndEventListener(_reactDom2['default'].findDOMNode(this.refs.track), callback);
+	        _ReactTransitionEvents2['default'].addEndEventListener(_reactDom2['default'].findDOMNode(this.refs.track), _callback2);
 	      });
 	    }
 
@@ -980,7 +971,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	exports['default'] = helpers;
-	module.exports = exports['default'];
 
 /***/ },
 /* 8 */
@@ -1401,11 +1391,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	exports.__esModule = true;
+	exports.Track = undefined;
 
 	var _react = __webpack_require__(2);
 
@@ -1418,6 +1405,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _classnames = __webpack_require__(14);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var getSlideClasses = function getSlideClasses(spec) {
 	  var slickActive, slickCenter, slickCloned;
@@ -1534,7 +1523,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 
-	var Track = _react2['default'].createClass({
+	var Track = exports.Track = _react2['default'].createClass({
 	  displayName: 'Track',
 
 	  render: function render() {
@@ -1546,7 +1535,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    );
 	  }
 	});
-	exports.Track = Track;
 
 /***/ },
 /* 16 */
@@ -1554,11 +1542,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	exports.__esModule = true;
+	exports.Dots = undefined;
 
 	var _react = __webpack_require__(2);
 
@@ -1568,14 +1553,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
 	var getDotCount = function getDotCount(spec) {
 	  var dots;
 	  dots = Math.ceil(spec.slideCount / spec.slidesToScroll);
 	  return dots;
 	};
 
-	var Dots = _react2['default'].createClass({
+	var Dots = exports.Dots = _react2['default'].createClass({
 	  displayName: 'Dots',
+
 
 	  clickHandler: function clickHandler(options, e) {
 	    // In Autoplay the focus stays on clicked button even after transition
@@ -1625,7 +1613,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    );
 	  }
 	});
-	exports.Dots = Dots;
 
 /***/ },
 /* 17 */
@@ -1633,13 +1620,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
+	exports.__esModule = true;
+	exports.NextArrow = exports.PrevArrow = undefined;
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var _react = __webpack_require__(2);
 
@@ -1649,15 +1633,18 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var PrevArrow = _react2['default'].createClass({
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var PrevArrow = exports.PrevArrow = _react2['default'].createClass({
 	  displayName: 'PrevArrow',
+
 
 	  clickHandler: function clickHandler(options, e) {
 	    e.preventDefault();
 	    this.props.clickHandler(options, e);
 	  },
 	  render: function render() {
-	    var prevClasses = { 'slick-prev': true };
+	    var prevClasses = { 'slick-arrow': true, 'slick-prev': true };
 	    var prevHandler = this.clickHandler.bind(this, { message: 'previous' });
 
 	    if (!this.props.infinite && (this.props.currentSlide === 0 || this.props.slideCount <= this.props.slidesToShow)) {
@@ -1688,8 +1675,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	exports.PrevArrow = PrevArrow;
-	var NextArrow = _react2['default'].createClass({
+	var NextArrow = exports.NextArrow = _react2['default'].createClass({
 	  displayName: 'NextArrow',
 
 	  clickHandler: function clickHandler(options, e) {
@@ -1697,7 +1683,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.props.clickHandler(options, e);
 	  },
 	  render: function render() {
-	    var nextClasses = { 'slick-next': true };
+	    var nextClasses = { 'slick-arrow': true, 'slick-next': true };
 	    var nextHandler = this.clickHandler.bind(this, { message: 'next' });
 
 	    if (!this.props.infinite) {
@@ -1740,7 +1726,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return nextArrow;
 	  }
 	});
-	exports.NextArrow = NextArrow;
 
 /***/ },
 /* 18 */
